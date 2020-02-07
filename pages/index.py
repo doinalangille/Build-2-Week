@@ -16,13 +16,11 @@ column1 = dbc.Col(
         dcc.Markdown(
             """
         
-            ## Your Value Proposition
+            ## Predict the Intention of Online Shoppers
 
-            Emphasize how the app will benefit users. Don't emphasize the underlying technology.
-
-            ✅ RUN is a running app that adapts to your fitness levels and designs personalized workouts to help you improve your running.
-
-            ❌ RUN is the only intelligent running app that uses sophisticated deep neural net machine learning to make your run smarter because we believe in ML driven workouts.
+            A lot of businesses are online in the technology era, and it is understandable why people want to predict the intention of buying things online. This app gives you an accurate prediction of online shoppers' intentions. It will help you predict whether a user will end with or without shopping if you know some characteristics of them.
+            
+            *Note: This app is built for educational purposes and should not be used in business decisions.*  
 
             """
         ),
@@ -31,14 +29,9 @@ column1 = dbc.Col(
     md=4,
 )
 
-gapminder = px.data.gapminder()
-fig = px.scatter(gapminder.query("year==2007"), x="gdpPercap", y="lifeExp", size="pop", color="continent",
-           hover_name="country", log_x=True, size_max=60)
-
-column2 = dbc.Col(
-    [
-        dcc.Graph(figure=fig),
-    ]
+column2 = dbc.Col([html.Img(src='assets/homepage.jpg', className='img-fluid')
+],
+align='center'
 )
 
 layout = dbc.Row([column1, column2])
